@@ -1,0 +1,19 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+body{
+  background-color: rgb(16,16,16);
+  color: white;
+}
+
+.hide{
+  display: none !important;
+}
+
+.active{
+  color: white;
+}
