@@ -27,7 +27,7 @@ const schema = new Schema<IUser>(
   }
 );
 
-schema.virtual("threads", {
+schema.virtual("threads",{
   localField: "_id",
   foreignField: "user",
   ref: "thread",
