@@ -1,19 +1,19 @@
-import { Schema, model, models, Types } from "mongoose";
+import mongoose ,{ Schema, model, models } from "mongoose";
 import usersModel from "./user";
 
-interface IThread {
-  thread: string;
-  user: Types.ObjectId;
-}
+// interface IThread {
+//   thread: string;
+//   user: mongoose.Types.ObjectId;
+// }
 
-const schema = new Schema<IThread>(
+const schema = new Schema(
   {
     thread: {
       type: String,
       required: true,
     },
     user: {
-      type: Schema.Types.ObjectId,
+      type: mongoose.Types.ObjectId,
       required : true,
       ref: "user",
     },
@@ -23,6 +23,6 @@ const schema = new Schema<IThread>(
   }
 );
 
-const threadsModel = models.thread || model<IThread>("thread", schema);
+const threadsModel = models.thread || model("thread", schema);
 
 export default threadsModel;
