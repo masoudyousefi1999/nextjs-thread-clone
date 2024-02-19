@@ -7,8 +7,8 @@ import usersModel from "@/models/user";
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
-  await connectToDB()
-  const threads = await threadsModel.find({},"thread").sort({createdAt : -1}).populate("user")
+  connectToDB()
+  const threads = await threadsModel.find({},"thread").sort({createdAt : -1}).populate("user","username")
   return (
     <>
       <div className={styles.threads_container}>
