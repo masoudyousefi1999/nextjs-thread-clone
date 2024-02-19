@@ -57,7 +57,7 @@ function Singup() {
         <ToastContainer />
         <div className={styles.singup_container}>
           <div className={styles.singup_text_container}>
-            <span>Singup</span>
+            <span>signup</span>
           </div>
           <form className={styles.singup_form} onSubmit={(e) => handler(e)}>
             <div className={styles.input_box_container}>

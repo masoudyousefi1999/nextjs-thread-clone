@@ -15,6 +15,7 @@
     "bcryptjs": "^2.4.3",
     "cookie": "^0.6.0",
     "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.3.0",
     "mongoose": "^8.1.2",
     "next": "14.1.0",
     "react": "^18",
