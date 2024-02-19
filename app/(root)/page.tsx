@@ -8,6 +8,9 @@ export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   connectToDB()
+  usersModel.on("ok", () => {
+    console.log("user model created")
+  })
   const threads = await threadsModel.find({},"thread").sort({createdAt : -1}).populate("user","username")
   return (
     <>
