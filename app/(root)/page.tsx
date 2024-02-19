@@ -2,6 +2,7 @@ import Threads from "@/components/threads/threads";
 import styles from "./page.module.css";
 import connectToDB from "@/utils/db";
 import threadsModel from "@/models/thread";
+import usersModel from "@/models/user";
 
 export const dynamic = 'force-dynamic'
 
