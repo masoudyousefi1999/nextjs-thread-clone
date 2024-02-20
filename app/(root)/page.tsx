@@ -11,11 +11,11 @@ export default async function Home() {
   usersModel.on("ok", () => {
     console.log("user model created")
   })
-  const threads = await threadsModel.find({},"thread").sort({createdAt : -1}).populate("user","username")
+  const threads = await threadsModel.find({},"thread createdAt").sort({createdAt : -1}).populate("user","username")
   return (
     <>
       <div className={styles.threads_container}>
-      {threads.map((thread) => <Threads thread={thread.thread} username={thread.user.username} key={thread._id} />)}
+      {threads.map((thread) => <Threads thread={thread.thread} username={thread.user.username} key={thread._id} createdTime={thread.createdAt} />)}
       </div>
     </>
   );

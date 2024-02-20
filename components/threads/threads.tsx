@@ -6,9 +6,35 @@ import Image from "next/image";
 type propsType = {
   thread: string;
   username: string;
+  createdTime : Date
 };
 
-function Threads({ thread, username }: propsType) {
+const calculateTime : (time : number) => string = (time) => {
+  if(time < 1){
+    console.log("time is under 0 so we turn it to 1 =>",time)
+    return "1m"
+  }else if(time <= 59){
+    console.log("time is bettwen 1-60 we return your minuts=>",time)
+    return `${time}m`
+  }else if(time >= 60){
+    time = Math.floor(time / 60)
+    if(time >= 24){
+      time = Math.floor(time / 24)
+      console.log("time is bigger than hours so we turned to day=>",time)
+      return `${time}d`
+    }
+    console.log("time is bigger than 60 so we turned to hours=>",time)
+    return `${time}h`
+  }
+  return "1m";
+}
+
+function Threads({ thread, username, createdTime}: propsType) {
+  const threadCreatdTime = createdTime.getTime()
+  const currentDate = Date.now()
+  const timeDiffrence = currentDate - threadCreatdTime
+  let threadsTime = Math.floor(timeDiffrence / (1000* 60)) // threads time in minuts
+  const threadPostedTime = calculateTime(threadsTime)
   return (
     <>
       <section className={styles.thread}>
@@ -28,7 +54,7 @@ function Threads({ thread, username }: propsType) {
             <div className={styles.username_and_time}>
               <span className={styles.username}>{username}</span>
               <div className={styles.time}>
-                <span>1w</span>
+                <span>{threadPostedTime}</span>
                 <div className={styles.more_icon_container}>
                   <svg
                     aria-label="More"
