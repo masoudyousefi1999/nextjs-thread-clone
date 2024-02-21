@@ -78,7 +78,7 @@
 }
 .line {
   width: 2px;
-  height: 500px;
+  height: 150px;
   background-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -91,7 +91,7 @@
 }
 
 .modal_text_area {
-  background-color: rgb(40, 40, 40);
+  background-color: transparent;
   border: none;
   resize: none;
   height: 500px;

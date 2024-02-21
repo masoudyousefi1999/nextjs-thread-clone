@@ -34,6 +34,7 @@
     overflow: hidden;
     justify-self: flex-start;
     align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, .1);
     
 }
 

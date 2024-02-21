@@ -20,7 +20,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.5s;
   cursor: pointer;
   color: rgb(90, 90, 90);
 }
@@ -33,8 +32,13 @@
   font-size: 10px;
 }
 
+@media only screen and (min-width: 550px) {
+  .icon_container{
+    transition: background-color 0.5s;
+  }
 .icon_container:hover,
 .icon_container:focus
 {
   background-color: rgba(50, 50, 50);
+}
 }

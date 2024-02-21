@@ -1,19 +1,25 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 14px;
+  scrollbar-color: rgb(100, 100, 100) rgb(60, 60, 60);
 }
 
-body{
-  background-color: rgb(16,16,16);
+body {
+  background-color: rgb(10, 10, 10);
   color: white;
+  overflow-x: hidden;
 }
 
-.hide{
+.hide {
   display: none !important;
 }
 
-.active{
-  color: white;
+.active {
+  color: white !important;
+}
+
+a{
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

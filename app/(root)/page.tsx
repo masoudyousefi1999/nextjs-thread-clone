@@ -12,6 +12,7 @@ export default async function Home() {
     console.log("user model created")
   })
   const threads = await threadsModel.find({},"thread createdAt").sort({createdAt : -1}).populate("user","username")
+  console.log(threads)
   return (
     <>
       <div className={styles.threads_container}>

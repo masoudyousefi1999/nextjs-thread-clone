@@ -1,0 +1,118 @@
+.edit_modal{
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(10, 10, 10);
+}
+
+.edit_modal_container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_modal_header{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+}
+
+.edit_modal_header_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.edit_modal_header_left svg{
+  cursor: pointer;
+}
+
+.edit_user_section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgba(20, 20, 20, .1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255,.2);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.edit_user_section div{
+    position: relative;
+    margin: 10px;
+}
+
+.edit_user_section div input{
+    width: 100%;
+    background-color: transparent;
+    padding:5px 0 ;
+    border: none;
+    outline: none;
+    caret-color: white;
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.edit_user_section div input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px rgba(20, 20, 20, .1) inset !important;
+    color: red;
+}
+
+.edit_user_section div label{
+    position: absolute;
+    left: 1px;
+    color: rgb(200, 200, 200);
+    top: 1px;
+    transition: all .4s;
+}
+
+.edit_user_section div input:valid ~ label,
+.edit_user_section div input:focus ~ label{
+    top: -20px;
+    color: gray;
+    font-size: .9rem;
+}
+
+.user_Profile{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.user_Profile div{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .1);
+}
+
+.user_Profile div img{
+    width: 100%;
+    height: 100%;
+}
+
+.user_Profile button{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid rgba(255, 255, 255, .3);
+    color: rgb(200, 200, 200);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

@@ -4,9 +4,11 @@ import styles from "./modal.module.css";
 import Image from "next/image";
 import me from "@/public/images/IMG_20240106_122132_702.jpg";
 import changeModalStateStore from "@/utils/zudStore";
+import { useRouter } from "next/navigation";
 
 function CreateModal() {
   const ref = useRef<HTMLTextAreaElement>(null)
+  const router = useRouter()
   const isModalOpen: boolean = changeModalStateStore((state) => state.isModalOpen);
   const closeModal = changeModalStateStore((state) => state.closeModal);
   const scrollHandler = () => window.scrollTo(0, 0);
@@ -35,6 +37,8 @@ function CreateModal() {
     })
     const data = await res.json()
     closeModal()
+    setThread("")
+    router.refresh()
   }
   return (
     <section className={`${styles.create_modal} ${!isModalOpen ? "hide" : ""}`}>

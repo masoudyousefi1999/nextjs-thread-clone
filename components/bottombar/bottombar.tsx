@@ -30,7 +30,7 @@ function BottomBar() {
           </svg>
         </div>
       </Link>
-      <Link href={"/"}>
+      <Link href={"/search"}>
         <div className={`${styles.icon_container} ${pathName == "/search" && "active" }`}>
           <svg
             aria-label="Search"
@@ -80,7 +80,7 @@ function BottomBar() {
           </svg>
         </div>
       </Link>
-      <Link href={"/"}>
+      <Link href={"/likes"}>
         <div className={styles.icon_container}>
           <svg
             aria-label="Notifications"
