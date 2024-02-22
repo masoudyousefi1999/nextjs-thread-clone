@@ -4,7 +4,12 @@ export async function middleware(req: NextRequest, event: NextFetchEvent) {
   const { pathname } = req.nextUrl;
   const basePath = req.nextUrl.origin;
   const token = req.cookies.get("token")?.value;
-  if (pathname === "/") {
+  if (
+    pathname === "/" ||
+    pathname === "/likes" ||
+    pathname === "/profile" ||
+    pathname === "/search"
+  ) {
     if (!token) {
       return NextResponse.redirect(new URL("/login", req.url));
     }
