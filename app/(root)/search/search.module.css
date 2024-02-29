@@ -37,3 +37,9 @@
     gap: 10px;
     margin-bottom: 60px;
 }
+
+.no_user{
+    justify-self: center;
+    align-self: center;
+    margin-top: 50px;
+}

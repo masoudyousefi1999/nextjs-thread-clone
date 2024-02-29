@@ -1,12 +1,13 @@
-import { Schema, model, models } from "mongoose";
-import threadsModel from "./thread";
+import mongoose, { Schema, VirtualType, model, models } from "mongoose";
+import threadsModel, { IThread } from "./thread";
 
-interface IUser {
+export interface IUser{
+  _id? : string
   username: string;
   password: string;
   email: string;
+  userThreads?: IThread[];
 }
-
 const schema = new Schema<IUser>(
   {
     username: {
@@ -27,11 +28,13 @@ const schema = new Schema<IUser>(
   }
 );
 
-schema.virtual("threads",{
+schema.virtual("userThreads",{
+  ref: "thread",
   localField: "_id",
   foreignField: "user",
-  ref: "thread",
 });
+
+
 
 const usersModel = models.user || model<IUser>("user", schema);
 

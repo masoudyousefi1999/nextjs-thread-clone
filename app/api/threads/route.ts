@@ -23,8 +23,7 @@ export const POST = async (req : NextRequest) => {
     connectToDB()
     const {thread} = await req.json();
     const user = await usersModels.findOne({email : currentUser.email})
-    const userId = user._id.toString()
-    const newThread = await threadsModel.create({thread,user : userId})
+    const newThread = await threadsModel.create({thread,user : user._id})
     return new Response(JSON.stringify({newThread}),{
         status : 201
     })

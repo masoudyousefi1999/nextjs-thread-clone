@@ -8,7 +8,12 @@ import Image from "next/image";
 import me from "@/public/images/IMG_20240106_122132_702.jpg";
 import EditModal from "../editModal/editModal";
 
-function UserStats() {
+type props = {
+  username : string,
+  email : string
+}
+
+function UserStats({username,email}:props) {
   const [modalState, setModaleState] = useState(false);
   const closeModal = () => setModaleState(false);
   return (
@@ -26,7 +31,7 @@ function UserStats() {
           </div>
           <div className={styles.user_info}>
             <div className={styles.user_info_username}>
-              <span>MasoudYousefi</span>
+              <span>{username}</span>
             </div>
             <div className={styles.user_info_profile}>
               <div>
@@ -39,7 +44,7 @@ function UserStats() {
               </div>
             </div>
             <div className={styles.user_info_email}>
-              <span>masoudyousefi@gmail.com</span>
+              <span>{email}</span>
             </div>
           </div>
           <div className={styles.edit_profile_section}>
@@ -55,7 +60,7 @@ function UserStats() {
           </div>
         </div>
       </div>
-      <EditModal modalState={modalState} closeModal={closeModal} />
+      <EditModal modalState={modalState} closeModal={closeModal} username={username} email={email} />
     </>
   );
 }

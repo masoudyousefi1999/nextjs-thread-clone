@@ -8,9 +8,13 @@ import me from "@/public/images/IMG_20240106_122132_702.jpg";
 function EditModal({
   modalState,
   closeModal,
+  username,
+  email
 }: {
   modalState: boolean;
   closeModal: () => void;
+  username : string;
+  email : string
 }) {
   const image_input = useRef<HTMLInputElement>(null);
 
@@ -30,11 +34,11 @@ function EditModal({
         </div>
         <div className={styles.edit_user_section}>
           <div>
-            <input type="text" id="username" required={true} />
+            <input type="text" id="username" required={true} value={username}/>
             <label htmlFor="username">Username</label>
           </div>
           <div>
-            <input type="text" id="email" required={true} />
+            <input type="text" id="email" required={true} value={email}/>
             <label htmlFor="email">email</label>
           </div>
           <div className={styles.user_Profile}>

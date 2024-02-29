@@ -1,5 +1,5 @@
 import { hash, compare } from "bcryptjs";
-import { sign, verify } from "jsonwebtoken";
+import { JwtPayload, sign, verify } from "jsonwebtoken";
 
 const hashPassword = async (password: string) => {
   const hashedPassword = await hash(password, 12);
@@ -20,7 +20,7 @@ const generateToken = (data: object) => {
 
 const verifyToken = (token: string) => {
   try {
-    const veryfied = verify(token, "asdfacdsgfasdfzadsfcsdz");
+    const veryfied : any = verify(token, "asdfacdsgfasdfzadsfcsdz");
     return veryfied;
   } catch (error) {
     console.log("your token is not valid");
